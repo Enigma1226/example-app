@@ -58,6 +58,13 @@
             </svg>
             '
             />
+            <x-admin.menu-item
+            :href="route('admin.classroom')"
+            label="Classroom"
+            view-box="0 0 24 24"
+            icon='<path d="M3 21V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16h-2v-2H5v2H3Zm4-4h2v-3H7v3Zm0-5h2V9H7v3Zm4 5h2v-3h-2v3Zm0-5h2V9h-2v3Zm4 5h2v-3h-2v3Zm0-5h2V9h-2v3Z"/>
+            '
+            />
         </ul>
       </div>
     </aside>
