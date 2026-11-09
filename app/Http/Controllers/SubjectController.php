@@ -12,6 +12,6 @@ class SubjectController extends Controller
         $title = 'Data Subjects';
         $subjects = Subject::query()->orderBy('name')->get();
 
-        return view('admin.subject', compact('title', 'subjects'));
+        return view('admin.subject.index', compact('title', 'subjects'));
     }
 }

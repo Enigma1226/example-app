@@ -12,6 +12,6 @@ class TeacherController extends Controller
         $title = 'Data Teachers';
         $teachers = Teacher::query()->orderBy('name')->get();
 
-        return view('admin.teacher', compact('title', 'teachers'));
+        return view('admin.teacher.index', compact('title', 'teachers'));
     }
 }

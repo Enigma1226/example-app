@@ -19,6 +19,7 @@ Route::get('/home', function () {
 Route::get('/admin/about', [AboutController::class, 'index']);
 Route::get('/admin/dashboard', [DashboardController::class, 'index']);
 Route::get('/admin/student', [StudentController::class, 'index'])->name('admin.student');
+Route::post('/admin/student', [StudentController::class, 'store'])->name('admin.student.store');
 Route::get('/admin/classroom', [ClassroomController::class, 'index'])->name('admin.classroom');
 Route::get('/admin/subjects', [SubjectController::class, 'index'])->name('admin.subjects');
 Route::get('/admin/teachers', [TeacherController::class, 'index'])->name('admin.teachers');

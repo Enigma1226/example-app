@@ -12,6 +12,6 @@ class ClassroomController extends Controller
         $title = 'Data Classroom';
         $classrooms = Classroom::query()->orderBy('name')->get();
 
-        return view('admin.classroom', compact('title', 'classrooms'));
+        return view('admin.classroom.index', compact('title', 'classrooms'));
     }
 }
