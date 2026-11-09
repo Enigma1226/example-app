@@ -47,9 +47,9 @@
                     @foreach ($students as $student)
                         <tr class="border-b border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800">
                             <td class="px-6 py-4">{{ $loop->iteration }}</td>
-                            <td class="px-6 py-4">{{ $student['name'] }}</td>
-                            <td class="px-6 py-4">{{ $student['nis'] }}</td>
-                            <td class="px-6 py-4">{{ $student['classroom'] }}</td>
+                            <td class="px-6 py-4">{{ $student->name }}</td>
+                            <td class="px-6 py-4">{{ $student->nis }}</td>
+                            <td class="px-6 py-4">{{ $student->classroom->name ?? '-' }}</td>
                             <td class="px-6 py-4">
                                 @if ($student['status'] === 'active')
                                     <span class="rounded-full bg-green-100 px-2.5 py-1 text-xs font-medium text-green-800">Active</span>

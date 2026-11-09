@@ -26,6 +26,11 @@
                             <td class="px-6 py-4">{{ $classroom->grade_level }}</td>
                             <td class="px-6 py-4">{{ $classroom->homeroom_teacher }}</td>
                             <td class="px-6 py-4">{{ $classroom->capacity }} siswa</td>
+                            <td class="px-6 py-4 text-gray-300">
+                                @foreach ($classroom->students as $student)
+                                {{ $student->name}} <br>
+                                @endforeach
+                            </td>
                         </tr>
                     @empty
                         <tr>

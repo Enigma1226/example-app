@@ -65,6 +65,18 @@
             icon='<path d="M3 21V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v16h-2v-2H5v2H3Zm4-4h2v-3H7v3Zm0-5h2V9H7v3Zm4 5h2v-3h-2v3Zm0-5h2V9h-2v3Zm4 5h2v-3h-2v3Zm0-5h2V9h-2v3Z"/>
             '
             />
+            <x-admin.menu-item
+            :href="route('admin.subjects')"
+            label="Subjects"
+            view-box="0 0 24 24"
+            icon='<path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H20v17H7.5A2.5 2.5 0 0 0 5 21.5v-17ZM7.5 4A.5.5 0 0 0 7 4.5v13.05c.16-.03.33-.05.5-.05H18V4H7.5Z"/><path d="M4 5H3a1 1 0 0 0-1 1v13a3 3 0 0 0 3 3h15v-2H5a1 1 0 0 1-1-1V5Z"/>'
+            />
+            <x-admin.menu-item
+            :href="route('admin.teachers')"
+            label="Teachers"
+            view-box="0 0 24 24"
+            icon='<path d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 9a7 7 0 1 1 14 0H5Z"/><path d="M19.5 5.5a3 3 0 0 1 0 6M21 21a6 6 0 0 0-3-5.2"/>'
+            />
         </ul>
       </div>
     </aside>

@@ -10,19 +10,35 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class ClassroomFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition(): array
     {
+        $majors = ['PPLG', 'DKV', 'ANIMASI', 'TKJT', 'TEKNIK GRAFIKA'];
+        $classNames = [];
+
+        foreach ($majors as $major) {
+            foreach (range(1, 5) as $classNumber) {
+                $classNames[] = "11 {$major} {$classNumber}";
+            }
+        }
+
+        $existingClassNames = Classroom::query()
+            ->whereIn('name', $classNames)
+            ->pluck('name')
+            ->all();
+        $availableClassNames = array_values(array_diff($classNames, $existingClassNames));
+
+        if ($availableClassNames === []) {
+            throw new \LogicException('No unique classroom names are available for the factory.');
+        }
+
+        $name = fake()->unique()->randomElement($availableClassNames);
+        [, $major] = explode(' ', $name, 3);
+
         return [
-            'name' => fake()->unique()->randomElement(['11 PPLG 1', '11 PPLG 2', '11 PPLG 3']),
-            'major' => fake()->randomElement(['PPLG', 'DKV', 'ANIMASI']),
-            'grade_level' => fake()->randomElement(['X', 'XI', 'XII']),
+            'name' => $name,
+            'major' => $major,
+            'grade_level' => 11,
             'homeroom_teacher' => fake()->name(),
-            'capacity' => fake()->numberBetween(30, 40),
         ];
     }
 }
